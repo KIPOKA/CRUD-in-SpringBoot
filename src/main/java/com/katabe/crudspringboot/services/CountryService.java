@@ -2,20 +2,24 @@ package com.katabe.crudspringboot.services;
 
 import com.katabe.crudspringboot.beans.Country;
 import com.katabe.crudspringboot.controllers.AddResponse;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
+@Component
 public class CountryService {
     static HashMap<Integer, Country> countryIdMap;
 
     public CountryService(){
         countryIdMap = new HashMap<Integer, Country>();
         Country drc = new Country(1, "DRC", "Kinshasa");
-        Country rsa = new Country(1, "RSA", "Pretoria");
-        Country senegal = new Country(1, "Senegal", "Dakar");
-        Country usa = new Country(1, "United State of America", "Washington DC");
+        Country rsa = new Country(2, "RSA", "Pretoria");
+        Country senegal = new Country(3, "Senegal", "Dakar");
+        Country usa = new Country(4, "United State of America", "Washington DC");
         countryIdMap.put(1, drc);
         countryIdMap.put(2, rsa);
         countryIdMap.put(3, senegal);
