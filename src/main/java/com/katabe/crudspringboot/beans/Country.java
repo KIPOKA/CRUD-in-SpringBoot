@@ -1,11 +1,26 @@
 package com.katabe.crudspringboot.beans;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jdk.jfr.Enabled;
+
+@Entity
+@Table(name = "Country")
 public class Country {
+    @Id
+    @Column(name = "id")
     int id ;
+    @Column(name = "country_name")
     String countryName;
+    @Column(name = "capital")
     String countryCapital;
 
-    public Country(int i, String countryName, String countryCapital) {
+    public Country(){
+
+    }
+    public Country(int id, String countryName, String countryCapital) {
         this.id = id;
         this.countryName = countryName;
         this.countryCapital = countryCapital;
