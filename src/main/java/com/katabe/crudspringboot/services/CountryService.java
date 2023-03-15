@@ -22,7 +22,14 @@ public class CountryService {
         return countryRep.findAll();
     }
     public Country getCountryById(int id){
-        return countryRep.findById(id).get();
+        List<Country> countries = countryRep.findAll();
+        Country country = null;
+        for (Country coun: countries  ) {
+            if (coun.getId() == id){
+                country = coun;
+            }
+        }
+        return country;
     }
     public Country getCountryByName(String countryName){
         List<Country> countryList = countryRep.findAll();
