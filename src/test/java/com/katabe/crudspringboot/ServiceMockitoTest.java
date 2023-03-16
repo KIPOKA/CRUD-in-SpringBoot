@@ -78,11 +78,7 @@ public class ServiceMockitoTest {
     @Test
     @Order(6)
     public void test_deleteCountry(){
-//
-//        Country country = new Country(4, "Congo", "Kin");
         int countryId =1;
-       // when(countryRepository.save(country)).thenReturn(country);
-        //assertEquals(country,countryService.deleteCountry(country));
         countryService.deleteCountry(countryId);
         verify(countryRepository, times(1)).deleteById(countryId);
     }
